@@ -1,0 +1,49 @@
+type Book @entity {
+  _id: ID @id
+  name: String! @column
+  createdAt: Date @column
+  updatedAt: Date @column
+}
+
+type PaginateBook {
+  docs: [Book]!
+  totalDocs: Int!
+  limit: Int!
+  hasPrevPage: Boolean!
+  hasNextPage: Boolean!
+  page: Int!
+  totalPages: Int!
+  offset: Int
+  prevPage: Int
+  nextPage: Int
+  pagingCounter: Int!
+  meta: Object
+}
+
+input PaginateInput {
+  limit: Int
+  offset: Int
+  page: Int
+  sort: Object
+  pagination: Boolean
+}
+
+input CreateBookInput {
+  name: String
+}
+
+input UpdateBookInput {
+  _id: ID!
+  name: String
+}
+
+extend type Query {
+  getBookById(_id: ID!): Book!
+  listBook(paginate: PaginateInput, query: String): PaginateBook!
+}
+
+extend type Mutation {
+  createBook(createBookInput: CreateBookInput!): Book!
+  updateBook(updateBookInput: UpdateBookInput!): Book!
+  deleteBook(_id: ID!): Book!
+}

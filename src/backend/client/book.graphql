@@ -1,0 +1,53 @@
+query ListBook($paginate: PaginateInput, $query: String) {
+  listBook(paginate: $paginate, query: $query) {
+    docs {
+      _id
+      createdAt
+      updatedAt
+    }
+    hasNextPage
+    hasPrevPage
+    limit
+    meta
+    nextPage
+    offset
+    page
+    pagingCounter
+    prevPage
+    totalDocs
+    totalPages
+  }
+}
+query GetBookById($id: ID!) {
+  getBookById(_id: $id) {
+    _id
+    createdAt
+    updatedAt
+  }
+}
+
+mutation CreateBook($createBookInput: CreateBookInput!) {
+  createBook(createBookInput: $createBookInput) {
+    _id
+    createdAt
+    updatedAt
+  }
+}
+
+mutation UpdateBook($updateBookInput: UpdateBookInput!) {
+  updateBook(updateBookInput: $updateBookInput) {
+    _id
+    createdAt
+    updatedAt
+  }
+}
+
+mutation DeleteBook($id: ID!) {
+  deleteBook(_id: $id) {
+    _id
+    active
+    _id
+    createdAt
+    updatedAt
+  }
+}

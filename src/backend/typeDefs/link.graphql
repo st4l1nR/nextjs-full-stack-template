@@ -1,0 +1,8 @@
+scalar Date
+scalar Object
+type Query {
+  _: Boolean
+}
+type Mutation {
+  _: Boolean
+}
