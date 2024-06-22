@@ -11,8 +11,7 @@ import './globals.css'
 const inter = Public_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SP Details',
-  description: 'Detalles , adornos y obsequios personalizados.',
+  title: 'Nextjs full stack template',
 }
 
 export default async function RootLayout({

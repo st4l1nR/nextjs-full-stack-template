@@ -1,4 +1,4 @@
-import Book from './book.js'
+import Book from './book'
 import { DataSourceContext } from '@/types/context.js'
 export default {
   Book,

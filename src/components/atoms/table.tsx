@@ -1,6 +1,6 @@
 'use client'
 
-import { clsx } from 'clsx'
+import clsx from 'clsx'
 import type React from 'react'
 import { createContext, useContext, useState } from 'react'
 import { Link } from './link'
@@ -53,7 +53,9 @@ export function Table({
               !bleed && 'sm:px-[--gutter]',
             )}
           >
-            <table className="min-w-full text-left text-sm/6">{children}</table>
+            <table className="min-w-full text-left text-sm/6 text-zinc-950 dark:text-white">
+              {children}
+            </table>
           </div>
         </div>
       </div>
@@ -67,8 +69,8 @@ export function TableHead({
 }: React.ComponentPropsWithoutRef<'thead'>) {
   return (
     <thead
-      className={clsx(className, 'text-zinc-500 dark:text-zinc-400')}
       {...props}
+      className={clsx(className, 'text-zinc-500 dark:text-zinc-400')}
     />
   )
 }
@@ -92,7 +94,6 @@ export function TableRow({
   target,
   title,
   className,
-  children,
   ...props
 }: {
   href?: string
@@ -119,9 +120,7 @@ export function TableRow({
             !striped &&
             'hover:bg-zinc-950/[2.5%] dark:hover:bg-white/[2.5%]',
         )}
-      >
-        {children}
-      </tr>
+      />
     </TableRowContext.Provider>
   )
 }
@@ -140,7 +139,7 @@ export function TableHeader({
         'border-b border-b-zinc-950/10 px-4 py-2 font-medium first:pl-[var(--gutter,theme(spacing.2))] last:pr-[var(--gutter,theme(spacing.2))] dark:border-b-white/10',
         grid &&
           'border-l border-l-zinc-950/5 first:border-l-0 dark:border-l-white/5',
-        !bleed && 'sm:first:pl-2 sm:last:pr-2',
+        !bleed && 'sm:first:pl-1 sm:last:pr-1',
       )}
     />
   )
@@ -166,7 +165,7 @@ export function TableCell({
         grid &&
           'border-l border-l-zinc-950/5 first:border-l-0 dark:border-l-white/5',
         dense ? 'py-2.5' : 'py-4',
-        !bleed && 'sm:first:pl-2 sm:last:pr-2',
+        !bleed && 'sm:first:pl-1 sm:last:pr-1',
       )}
     >
       {href && (
