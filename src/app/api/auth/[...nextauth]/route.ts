@@ -1,6 +1,5 @@
 import NextAuth, { AuthOptions, Session } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { getSession } from 'next-auth/react'
 
 export const nextAuthOptions: AuthOptions = {
   providers: [
@@ -35,9 +34,6 @@ export const nextAuthOptions: AuthOptions = {
       }
       return token
     },
-  },
-  pages: {
-    signIn: `${process.env.NEXT_PUBLIC_AUTH_URL}/admin`,
   },
 }
 
