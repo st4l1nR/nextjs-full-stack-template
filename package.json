@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-full-stack-teemplate",
+  "name": "nextjs-full-stack-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,9 +20,11 @@
     "@apollo/client": "^3.9.6",
     "@apollo/server": "^4.10.1",
     "@as-integrations/next": "^3.0.0",
-    "@headlessui/react": "2.0.0-alpha.4",
+    "@headlessui/react": "2.1.0",
+    "@heroicons/react": "^2.1.4",
     "apollo-server-micro": "^3.13.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.2.11",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "jsonwebtoken": "^9.0.2",
@@ -60,7 +62,7 @@
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.2"
   }
 }
