@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
 import { Public_Sans } from 'next/font/google'
 import ProviderNextThemes from '@/components/organisms/ProviderNextThemes'
-import { ToastContainer } from 'react-toastify'
+import { Toaster } from 'react-hot-toast'
 import ProviderNextAuth from '@/components/organisms/ProviderNextAuth'
 import ProviderApollo from '@/components/organisms/ProviderApollo'
 import clsx from 'clsx'
-import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 
 const inter = Public_Sans({ subsets: ['latin'] })
@@ -29,7 +28,7 @@ export default async function RootLayout({
             <ProviderNextAuth>{children}</ProviderNextAuth>
           </ProviderNextThemes>
         </ProviderApollo>
-        <ToastContainer />
+        <Toaster />
       </body>
     </html>
   )
