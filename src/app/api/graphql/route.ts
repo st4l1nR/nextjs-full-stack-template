@@ -20,7 +20,7 @@ const server = new ApolloServer({
   typeDefs,
 })
 const handler = startServerAndCreateNextHandler(server, {
-  context: async (req): Promise<any> => {
+  context: async (req: any): Promise<any> => {
     await mongoose.connect(process.env.MONGO_DB_URI || '', {})
     const authorization = req.headers.authorization || ''
     const token = authorization.split(' ')[1]
